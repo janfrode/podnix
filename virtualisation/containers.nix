@@ -35,21 +35,21 @@
     pihole = {
       image = "pihole/pihole:2021.12.1";
       #dependsOn = [ "unbound" ]; 
-      #ports = [
-      #   "0.0.0.0:53:53/tcp"
-      #   "0.0.0.0:53:53/udp" 
-      #   "80:80/tcp"
+      ports = [
+         "0.0.0.0:53:53/tcp"
+         "0.0.0.0:53:53/udp" 
+         "80:80/tcp"
       #   "443:443/tcp"
-      #];
+      ];
       environment = {
         TZ = "Europe/Oslo";
         WEBPASSWORD = (builtins.readFile ../secrets/pihole-password) ;  
         DNS1 = "172.20.30.1";
         DNS2 = "8.8.8.8";
       };
-      extraOptions = [
-      "--net=host"      
-      ];
+      #extraOptions = [
+      #"--net=host"      
+      #];
     };
 
     # Image detection with doods2:
