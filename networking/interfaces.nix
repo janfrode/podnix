@@ -2,6 +2,7 @@
 
   networking.vlans = {
       vlan1 = { id=1; interface="eno1"; };
+      podnet = { id=2; interface="eno1"; };
       vlan30 = { id=30; interface="eno1"; };
     };
 
@@ -15,5 +16,6 @@
         address = "172.20.30.3";
         prefixLength = 24;
     }];
+    podnet.useDHCP = false;
   };
 }
