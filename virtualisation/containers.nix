@@ -68,5 +68,27 @@
       "--ip=172.20.2.54"      
       ];
     };
+    unifi = {
+      image = "quay.io/linuxserver.io/unifi-controller:latest";
+      environment = {
+	PUID = "271";
+	PGID = "271";
+      };
+      volumes = [
+        "/srv/unifi:/config"
+      ];
+      ports = [
+	"8080:8080"
+	"8443:8443"
+        "8843:8843"
+	"3478:3478/udp"
+	"10001:10001/udp"
+      ];
+      #extraOptions = [
+      #"--net=host"      
+    #  "--net=podnetwork"      
+    #  "--ip=172.20.2.54"      
+    #  ];
+    };
 };
 }

@@ -12,13 +12,19 @@
     root.openssh.authorizedKeys.keys =
       [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFYSqC6uqIbcTZQ9J0NqF389O7T5r61tUG8uGSCVqCHk" ];
 
+    unifi = {
+      #issystemuser = true;
+      group = "unifi";
+      uid = 271;
+    };
     zigbee2mqtt = {
-      isSystemUser = true;
+      #issystemuser = true;
       group = "zigbee2mqtt";
       uid = 317;
     };
   };
 
+  users.groups.unifi.gid = 271;
   users.groups.zigbee2mqtt.gid = 317;
 
 }

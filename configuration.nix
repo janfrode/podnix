@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./users/users.nix
+      ./networking/firewall.nix
       ./networking/interfaces.nix
       ./services/grafana.nix
       ./virtualisation/podman.nix
