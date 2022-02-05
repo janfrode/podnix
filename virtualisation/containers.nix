@@ -84,11 +84,30 @@
 	"3478:3478/udp"
 	"10001:10001/udp"
       ];
-      #extraOptions = [
-      #"--net=host"      
-    #  "--net=podnetwork"      
-    #  "--ip=172.20.2.54"      
-    #  ];
+    };
+    # influxdb
+    influxdb = {
+      image = "docker.io/library/influxdb:2.1";
+      user = "3318";
+      volumes = [
+        "/srv/influxdb:/var/lib/influxdb2"
+      ];
+      extraOptions = [
+      "--net=podnetwork"      
+      "--ip=172.20.2.55"      
+      ];
+    };
+    # grafana
+    grafana = {
+      image = "docker.io/grafana/grafana:8.3.4";
+      user = "3319";
+      volumes = [
+        "/srv/grafana:/var/lib/grafana"
+      ];
+      extraOptions = [
+      "--net=podnetwork"      
+      "--ip=172.20.2.56"      
+      ];
     };
 };
 }

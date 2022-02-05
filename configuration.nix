@@ -11,7 +11,7 @@
       ./users/users.nix
       ./networking/firewall.nix
       ./networking/interfaces.nix
-      ./services/grafana.nix
+      #./services/grafana.nix
       ./virtualisation/podman.nix
       ./virtualisation/containers.nix
     ];
