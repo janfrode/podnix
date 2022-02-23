@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
       ./users/users.nix
       ./networking/firewall.nix
-      ./networking/interfaces.nix
+      ./networking/networkd.nix
       #./services/grafana.nix
       ./virtualisation/podman.nix
       ./virtualisation/containers.nix
